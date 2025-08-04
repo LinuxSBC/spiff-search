@@ -1,0 +1,26 @@
+services:
+  spiff-search:
+    build:
+      context: .
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+      TYPESENSE_API_KEY: abcxyz # be sure to use the search-only-api-key
+      TYPESENSE_HOST: spiff-search-typesense.example.com
+      TYPESENSE_PORT: 443
+      TYPESENSE_PROTOCOL: https
+      PORT: 8104
+    ports:
+      - 8104:8104
+    volumes:
+      - ./images:/app/images
+      - ./log:/log
+
+  typesense:
+    image: typesense/typesense:28
+    restart: unless-stopped
+    ports:
+      - 8108:8108
+    volumes:
+      - ./typesense-data:/data
+    command: '--data-dir /data --api-key=abcxyz --enable-cors'

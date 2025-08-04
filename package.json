@@ -1,0 +1,18 @@
+{
+  "name": "spiff-search",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "parcel build index.html"
+  },
+  "devDependencies": {
+    "buffer": "^6.0.3",
+    "parcel": "^2.0.1",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "express": "^4.21.1",
+    "instantsearch.js": "^4.75.5",
+    "typesense-instantsearch-adapter": "^2.9.0"
+  }
+}
