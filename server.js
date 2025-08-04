@@ -5,6 +5,7 @@ const app = express();
 
 app.use('/images', express.static(path.join(__dirname, 'images')));
 app.use('/download.svg', express.static(path.join(__dirname, 'icons/download.svg')));
+app.use('/logo.svg', express.static(path.join(__dirname, 'icons/logo.svg')));
 
 // Serve the static files produced by Parcel
 app.use(express.static(path.join(__dirname, 'dist')));
