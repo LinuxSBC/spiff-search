@@ -21,7 +21,7 @@ RUN npm run build
 FROM node:${NODE_VERSION}-alpine
 
 # Use production node environment by default.
-ENV NODE_ENV production
+ENV NODE_ENV=production
 
 WORKDIR /app
 
@@ -46,4 +46,4 @@ COPY . .
 EXPOSE 3000
 
 # Run the application.
-CMD node server.js > /log/log.txt
+CMD ["node", "server.js"]
